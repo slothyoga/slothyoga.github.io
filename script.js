@@ -1,6 +1,9 @@
 let timer;
 let timeLeft = 120; // 2 minutes in seconds
 let isRunning = false;
+let touchStartX = null;
+let touchStartY = null;
+const movementThreshold = 10; // Minimum movement distance to trigger reset
 
 const timerDisplay = document.getElementById('timer');
 const message = document.getElementById('message');
@@ -39,23 +42,36 @@ function resetTimer() {
     updateTimer();
     isRunning = false;
     startBtn.disabled = false;
+    message.classList.remove('hidden');
 }
 
-startBtn.addEventListener('click', startTimer);
+function handleTouchStart(e) {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+}
 
-// Detect any interaction
-document.addEventListener('mousemove', () => {
-    if (isRunning) {
-        clearInterval(timer);
-        message.classList.remove('hidden');
+function handleTouchMove(e) {
+    if (!touchStartX || !touchStartY) return;
+
+    const touch = e.touches[0];
+    const deltaX = Math.abs(touch.clientX - touchStartX);
+    const deltaY = Math.abs(touch.clientY - touchStartY);
+
+    const isButtonTouch = e.target === startBtn || startBtn.contains(e.target);
+    if ((deltaX > movementThreshold || deltaY > movementThreshold) && !isButtonTouch) {
         resetTimer();
     }
-});
+}
 
-document.addEventListener('keydown', () => {
-    if (isRunning) {
-        clearInterval(timer);
-        message.classList.remove('hidden');
-        resetTimer();
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('mousemove', (e) => {
+        if (isRunning && e.target !== startBtn && !startBtn.contains(e.target)) {
+            resetTimer();
+        }
+    });
+
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+    startBtn.addEventListener('click', startTimer);
 }); 
