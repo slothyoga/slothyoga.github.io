@@ -71,7 +71,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    document.addEventListener('touchmove', (e) => {
+        if (isRunning) {
+            handleTouchMove(e);
+        }
+    });
+
     document.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
     startBtn.addEventListener('click', startTimer);
 }); 
