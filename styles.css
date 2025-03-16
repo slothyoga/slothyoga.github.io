@@ -140,3 +140,26 @@ button:active {
         transform: rotate(3deg);
     }
 }
+
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 4;
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    color: #4a6b57;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}

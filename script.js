@@ -9,6 +9,21 @@ const timerDisplay = document.getElementById('timer');
 const message = document.getElementById('message');
 const startBtn = document.getElementById('start-btn');
 
+let currentLang = navigator.language.startsWith('zh') ?
+    (navigator.language.includes('TW') || navigator.language.includes('HK') ? 'zh_HK' : 'zh') :
+    'en';
+
+function updateLanguage() {
+    const lang = translations[currentLang];
+    document.querySelector('h1').textContent = lang.title;
+    document.getElementById('instructions').innerHTML = lang.instructions
+        .map(line => `<p>${line}</p>`)
+        .join('');
+    document.getElementById('timer').textContent = lang.timer;
+    document.getElementById('message').textContent = lang.message;
+    document.getElementById('start-btn').textContent = lang.startButton;
+}
+
 function startTimer() {
     if (isRunning) return;
 
@@ -79,4 +94,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('touchstart', handleTouchStart);
     startBtn.addEventListener('click', startTimer);
+
+    updateLanguage();
+
+    document.getElementById('lang-en').addEventListener('click', () => {
+        currentLang = 'en';
+        updateLanguage();
+    });
+
+    document.getElementById('lang-zh').addEventListener('click', () => {
+        currentLang = 'zh';
+        updateLanguage();
+    });
+
+    document.getElementById('lang-zh_HK').addEventListener('click', () => {
+        currentLang = 'zh_HK';
+        updateLanguage();
+    });
 }); 
