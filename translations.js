@@ -37,5 +37,18 @@ const translations = {
         message: "重新開始。你動得太快了！",
         startButton: "開始",
         successMessage: "太棒了！你成功放鬆了2分鐘。🎉"
+    },
+    fr: {
+        title: "Yoga du Paresseux - Ne faites rien pendant 2 minutes",
+        instructions: [
+            "Asseyez-vous et détendez-vous pendant 2 minutes.",
+            "Concentrez-vous sur votre respiration et laissez le chronomètre tourner.",
+            "Ne bougez pas la souris ou n'appuyez sur aucune touche.",
+            "Respirez profondément et profitez du moment."
+        ],
+        timer: "02:00",
+        message: "Recommencez. Vous avez bougé trop tôt !",
+        startButton: "Commencer",
+        successMessage: "Bravo ! Vous vous êtes détendu avec succès pendant 2 minutes. 🎉"
     }
 }; 

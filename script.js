@@ -13,7 +13,7 @@ const startBtn = document.getElementById('start-btn');
 
 let currentLang = navigator.language.startsWith('zh') ?
     (navigator.language.includes('TW') || navigator.language.includes('HK') ? 'zh_HK' : 'zh') :
-    'en';
+    navigator.language.startsWith('fr') ? 'fr' : 'en';
 
 function updateLanguage() {
     const lang = translations[currentLang];
@@ -122,6 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('lang-en').addEventListener('click', () => {
         currentLang = 'en';
+        updateLanguage();
+    });
+
+    document.getElementById('lang-fr').addEventListener('click', () => {
+        currentLang = 'fr';
         updateLanguage();
     });
 
