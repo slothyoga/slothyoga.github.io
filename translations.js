@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        title: "Sloth Yoga",
+        title: "Sloth Yoga - Do Nothing for 2 Minutes",
         instructions: [
             "Just sit back and relax for 2 minutes.",
             "Focus on your breathing and let the timer run.",
@@ -12,7 +12,7 @@ const translations = {
         startButton: "Start"
     },
     zh: {
-        title: "树懒瑜伽",
+        title: "树懒瑜伽 - 静坐2分钟",
         instructions: [
             "静坐放松2分钟。",
             "专注于呼吸，让计时器运行。",
@@ -24,7 +24,7 @@ const translations = {
         startButton: "开始"
     },
     zh_HK: {
-        title: "樹懶瑜伽",
+        title: "樹懶瑜伽 - 靜坐2分鐘",
         instructions: [
             "靜坐放鬆2分鐘。",
             "專注於呼吸，讓計時器運行。",

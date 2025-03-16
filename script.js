@@ -1,3 +1,5 @@
+window.dataLayer = window.dataLayer || [];
+
 let timer;
 let timeLeft = 120; // 2 minutes in seconds
 let isRunning = false;
@@ -15,6 +17,7 @@ let currentLang = navigator.language.startsWith('zh') ?
 
 function updateLanguage() {
     const lang = translations[currentLang];
+    document.querySelector('title').textContent = lang.title;
     document.querySelector('h1').textContent = lang.title;
     document.getElementById('instructions').innerHTML = lang.instructions
         .map(line => `<p>${line}</p>`)
@@ -27,6 +30,9 @@ function updateLanguage() {
 function startTimer() {
     if (isRunning) return;
 
+    dataLayer.push({
+        'event': 'timerStart'
+    });
     isRunning = true;
     startBtn.disabled = true;
     message.classList.add('hidden');
@@ -52,6 +58,9 @@ function updateTimer() {
 }
 
 function resetTimer() {
+    dataLayer.push({
+        'event': 'timerReset'
+    });
     clearInterval(timer);
     timeLeft = 120;
     updateTimer();
