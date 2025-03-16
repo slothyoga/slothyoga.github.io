@@ -9,7 +9,8 @@ const translations = {
         ],
         timer: "02:00",
         message: "Start over. You moved too soon!",
-        startButton: "Start"
+        startButton: "Start",
+        successMessage: "Great job! You've successfully relaxed for 2 minutes. 🎉"
     },
     zh: {
         title: "树懒瑜伽 - 静坐2分钟",
@@ -21,7 +22,8 @@ const translations = {
         ],
         timer: "02:00",
         message: "重新开始。你动得太快了！",
-        startButton: "开始"
+        startButton: "开始",
+        successMessage: "太棒了！你成功放松了2分钟。🎉"
     },
     zh_HK: {
         title: "樹懶瑜伽 - 靜坐2分鐘",
@@ -33,6 +35,7 @@ const translations = {
         ],
         timer: "02:00",
         message: "重新開始。你動得太快了！",
-        startButton: "開始"
+        startButton: "開始",
+        successMessage: "太棒了！你成功放鬆了2分鐘。🎉"
     }
 }; 

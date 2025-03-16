@@ -45,8 +45,20 @@ function startTimer() {
             clearInterval(timer);
             isRunning = false;
             startBtn.disabled = false;
-            alert("Congratulations! You did nothing for 2 minutes.");
-            resetTimer();
+
+            // 使用更友好的成功提示
+            const successMessage = translations[currentLang].successMessage;
+            const successAlert = document.createElement('div');
+            successAlert.className = 'success-alert';
+            successAlert.textContent = successMessage;
+            document.body.appendChild(successAlert);
+
+            // 6秒后自动消失
+            setTimeout(() => {
+                successAlert.remove();
+            }, 6000);
+
+            resetTimer(false);
         }
     }, 1000);
 }
@@ -57,7 +69,7 @@ function updateTimer() {
     timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-function resetTimer() {
+function resetTimer(showMessage = true) {
     dataLayer.push({
         'event': 'timerReset'
     });
@@ -66,7 +78,9 @@ function resetTimer() {
     updateTimer();
     isRunning = false;
     startBtn.disabled = false;
-    message.classList.remove('hidden');
+    if (showMessage) {
+        message.classList.remove('hidden');
+    }
 }
 
 function handleTouchStart(e) {
