@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        title: "Sloth Yoga - Do Nothing for 2 Minutes",
+        title: "Sloth Yoga - Relax, Meditate and Do Nothing for 2 Minutes",
         instructions: [
             "Just sit back and relax for 2 minutes.",
             "Focus on your breathing and let the timer run.",
@@ -13,7 +13,7 @@ const translations = {
         successMessage: "Great job! You've successfully relaxed for 2 minutes. 🎉"
     },
     zh: {
-        title: "树懒瑜伽 - 静坐2分钟",
+        title: "树懒瑜伽 - 放松冥想2分钟",
         instructions: [
             "静坐放松2分钟。",
             "专注于呼吸，让计时器运行。",
@@ -26,7 +26,7 @@ const translations = {
         successMessage: "太棒了！你成功放松了2分钟。🎉"
     },
     zh_HK: {
-        title: "樹懶瑜伽 - 靜坐2分鐘",
+        title: "樹懶瑜伽 - 放鬆冥想2分鐘",
         instructions: [
             "靜坐放鬆2分鐘。",
             "專注於呼吸，讓計時器運行。",
@@ -39,7 +39,7 @@ const translations = {
         successMessage: "太棒了！你成功放鬆了2分鐘。🎉"
     },
     fr: {
-        title: "Yoga du Paresseux - Ne faites rien pendant 2 minutes",
+        title: "Yoga du Paresseux - Relaxez-vous, méditez et ne faites rien pendant 2 minutes",
         instructions: [
             "Asseyez-vous et détendez-vous pendant 2 minutes.",
             "Concentrez-vous sur votre respiration et laissez le chronomètre tourner.",
@@ -51,4 +51,4 @@ const translations = {
         startButton: "Commencer",
         successMessage: "Bravo ! Vous vous êtes détendu avec succès pendant 2 minutes. 🎉"
     }
-}; 
+};
